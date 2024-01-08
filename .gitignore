@@ -35,4 +35,5 @@
 /config/master.key
 
 /app/assets/builds/*
+/app/assets/builds/tailwind.css
 !/app/assets/builds/.keep
