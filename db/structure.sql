@@ -35,6 +35,47 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: trips; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.trips (
+    id bigint NOT NULL,
+    name character varying,
+    description text,
+    start_date timestamp(6) without time zone,
+    end_date timestamp(6) without time zone,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: trips_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.trips_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: trips_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.trips_id_seq OWNED BY public.trips.id;
+
+
+--
+-- Name: trips id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.trips ALTER COLUMN id SET DEFAULT nextval('public.trips_id_seq'::regclass);
+
+
+--
 -- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -51,10 +92,19 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: trips trips_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.trips
+    ADD CONSTRAINT trips_pkey PRIMARY KEY (id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
-
+INSERT INTO "schema_migrations" (version) VALUES
+('20240104024159');
 
