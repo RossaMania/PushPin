@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var button = document.querySelector('button[aria-controls="mobile-menu"]');
-  var mobileMenu = document.querySelector("#mobile-menu");
-  var iconOpen = button.querySelector(".hidden");
-  var iconClosed = button.querySelector(".block");
+  const button = document.querySelector('button[aria-controls="mobile-menu"]');
+  const mobileMenu = document.querySelector("#mobile-menu");
+  const iconOpen = button.querySelector(".hidden");
+  const iconClosed = button.querySelector(".block");
 
   button.addEventListener("click", function () {
     iconOpen.classList.toggle("hidden");
