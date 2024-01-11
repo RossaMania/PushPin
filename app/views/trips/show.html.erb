@@ -2,9 +2,9 @@
 
 <%= render @trip %>
 
-<div>
-  <%= link_to "Edit this trip", edit_trip_path(@trip) %> |
-  <%= link_to "Back to trips", trips_path %>
+<div class="m-6 flex items-center justify-end gap-x-6 p-4">
+  <%= link_to "Edit Trip!", edit_trip_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %> |
+  <%= link_to "Go Back!", trips_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
 
-  <%= button_to "Destroy this trip", @trip, method: :delete %>
+  <%= button_to "Destroy Trip!", @trip, method: :delete, class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
 </div>

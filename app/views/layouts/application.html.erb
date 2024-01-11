@@ -8,10 +8,12 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'navbar' %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <%= render 'layouts/header' %>
+    <main class="container mx-auto mt-14 px-5 flex">
       <%= yield %>
     </main>
   </body>
