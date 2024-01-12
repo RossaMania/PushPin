@@ -17,7 +17,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create trip" do
     assert_difference("Trip.count") do
-      post trips_url, params: { trip: { description: @trip.description, end_date: @trip.end_date, name: @trip.name, start_date: @trip.start_date } }
+      post trips_url, params: {trip: {description: @trip.description, end_date: @trip.end_date, name: @trip.name, start_date: @trip.start_date}}
     end
 
     assert_redirected_to trip_url(Trip.last)
@@ -34,7 +34,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update trip" do
-    patch trip_url(@trip), params: { trip: { description: @trip.description, end_date: @trip.end_date, name: @trip.name, start_date: @trip.start_date } }
+    patch trip_url(@trip), params: {trip: {description: @trip.description, end_date: @trip.end_date, name: @trip.name, start_date: @trip.start_date}}
     assert_redirected_to trip_url(@trip)
   end
 
