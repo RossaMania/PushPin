@@ -2,6 +2,13 @@
 
 <%= render @trip %>
 
+<h2>Places</h2>
+<% @places.each do |place| %>
+  <p><%= place.name %></p>
+  <%  end %>
+
+  <%= link_to "Show Places!", trips_places_path(@trip) %>
+
 <div class="m-6 flex items-center justify-end gap-x-6 p-4">
   <%= link_to "Edit Trip!", edit_trip_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %> |
   <%= link_to "Go Back!", trips_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
