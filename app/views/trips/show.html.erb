@@ -2,13 +2,14 @@
 
 <%= render @trip %>
 
-<h2>Places</h2>
+<div class="flex flex-col">
+<h2 class="block text-md font-medium leading-loose text-gray-900">Places</h2>
 <% @places.each do |place| %>
   <p><%= place.name %></p>
   <%  end %>
 
-  <%= link_to "Show Places!", trip_places_path(@trip) %>
-
+  <%= link_to "Show Places!", trip_places_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %>
+  </div>
 <div class="m-6 flex items-center justify-end gap-x-6 p-4">
   <%= link_to "Edit Trip!", edit_trip_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %> |
   <%= link_to "Go Back!", trips_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
