@@ -26,6 +26,43 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: places; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.places (
+    id bigint NOT NULL,
+    name character varying,
+    string character varying,
+    description character varying,
+    text character varying,
+    trip character varying,
+    "references" character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL,
+    trip_id bigint NOT NULL
+);
+
+
+--
+-- Name: places_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.places_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: places_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.places_id_seq OWNED BY public.places.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -69,6 +106,13 @@ ALTER SEQUENCE public.trips_id_seq OWNED BY public.trips.id;
 
 
 --
+-- Name: places id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.places ALTER COLUMN id SET DEFAULT nextval('public.places_id_seq'::regclass);
+
+
+--
 -- Name: trips id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -81,6 +125,14 @@ ALTER TABLE ONLY public.trips ALTER COLUMN id SET DEFAULT nextval('public.trips_
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: places places_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.places
+    ADD CONSTRAINT places_pkey PRIMARY KEY (id);
 
 
 --
@@ -100,11 +152,28 @@ ALTER TABLE ONLY public.trips
 
 
 --
+-- Name: index_places_on_trip_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_places_on_trip_id ON public.places USING btree (trip_id);
+
+
+--
+-- Name: places fk_rails_4052b2b22a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.places
+    ADD CONSTRAINT fk_rails_4052b2b22a FOREIGN KEY (trip_id) REFERENCES public.trips(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240115230026'),
+('20240114034147'),
 ('20240104024159');
 

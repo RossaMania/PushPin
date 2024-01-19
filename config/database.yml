@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: pushpin_production
   username: <%= ENV["DATABASE_USERNAME"] %>
   password: <%= ENV["PUSHPIN_DATABASE_PASSWORD"] %>

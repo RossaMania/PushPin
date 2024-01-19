@@ -8,6 +8,8 @@ class TripsController < ApplicationController
 
   # GET /trips/1 or /trips/1.json
   def show
+    @trip = Trip.find(params[:id])
+    @places = @trip.places
   end
 
   # GET /trips/new
@@ -25,7 +27,7 @@ class TripsController < ApplicationController
 
     respond_to do |format|
       if @trip.save
-        format.html { redirect_to trip_url(@trip), notice: "Trip was successfully created." }
+        format.html { redirect_to trip_url(@trip), notice: "Yay! Trip was successfully created." }
         format.json { render :show, status: :created, location: @trip }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class TripsController < ApplicationController
   def update
     respond_to do |format|
       if @trip.update(trip_params)
-        format.html { redirect_to trip_url(@trip), notice: "Trip was successfully updated." }
+        format.html { redirect_to trip_url(@trip), notice: "Yay! Trip was successfully updated." }
         format.json { render :show, status: :ok, location: @trip }
       else
         format.html { render :edit, status: :unprocessable_entity }
