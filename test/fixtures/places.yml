@@ -5,13 +5,11 @@ one:
   string: MyString
   description: MyString
   text: MyString
-  trip: MyString
-  references: MyString
+  trip: one # Update the reference to an existing trip label
 
 two:
   name: MyString
   string: MyString
   description: MyString
   text: MyString
-  trip: MyString
-  references: MyString
+  trip: two # Update the reference to an existing trip label

@@ -1,4 +1,4 @@
 class Trip < ApplicationRecord
   has_many :places,
-  dependent: :destroy
+    dependent: :destroy
 end
