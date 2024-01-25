@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
   def create
     @place = @trip.places.build(place_params)
     if @place.save
-      redirect_to trip_places_path(@trip), notice: 'Yay! Place was successfully created!'
+      redirect_to trip_places_path(@trip), notice: "Yay! Place was successfully created!"
     else
       render :new
     end
@@ -25,16 +25,16 @@ class PlacesController < ApplicationController
   def update
     @place = @trip.places.find(params[:id])
     if @place.update(place_params)
-      redirect_to trip_places_path(@trip), notice: 'Yay! Place was successfully updated!'
+      redirect_to trip_places_path(@trip), notice: "Yay! Place was successfully updated!"
     else
       render :edit
     end
   end
 
   def destroy
-     @place = @trip.places.find(params[:id])
-     @place.destroy
-     redirect_to trip_places_path(@trip), notice: 'Yay! Place was successfully deleted!'
+    @place = @trip.places.find(params[:id])
+    @place.destroy
+    redirect_to trip_places_path(@trip), notice: "Yay! Place was successfully deleted!"
   end
 
   private
@@ -44,7 +44,6 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-
     params.require(:place).permit(:name, :description)
   end
 end
