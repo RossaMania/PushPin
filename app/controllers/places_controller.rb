@@ -33,7 +33,7 @@ class PlacesController < ApplicationController
 
   def destroy
     @place = @trip.places.find(params[:id])
-    @place.destroy
+    @place.destroy!
     redirect_to trip_places_path(@trip), notice: "Yay! Place was successfully deleted!"
   end
 
