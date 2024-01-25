@@ -41,16 +41,30 @@ jobs:
           PG_HOST: localhost
           PG_USER: postgres
           PG_PASSWORD: password
+          PUSHPIN_DATABASE_PASSWORD: postgres
           RAILS_ENV: test
         run: |
           bin/rails db:prepare
-          bin/rails test
 
       - name: Run tests
+         env:
+          PG_DATABASE: postgres
+          PG_HOST: localhost
+          PG_USER: postgres
+          PG_PASSWORD: postgres
+          PUSHPIN_DATABASE_PASSWORD: postgres
+          RAILS_ENV: test
         run: |
           bin/rails test
 
       - name: Install and Run StandardRB
+        env:
+          PG_DATABASE: postgres
+          PG_HOST: localhost
+          PG_USER: postgres
+          PG_PASSWORD: postgres
+          PUSHPIN_DATABASE_PASSWORD: postgres
+          RAILS_ENV: test
         run: |
           gem install standard
           standardrb
