@@ -12,13 +12,9 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres
         env:
-          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: pushpin_test
-        ports:
-          - 5432:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -41,9 +37,6 @@ jobs:
       - name: Set up database
         env:
           RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: postgres
-          PUSHPIN_DATABASE_PASSWORD: postgres
         run: |
           bin/rails db:create
           bin/rails db:schema:load
