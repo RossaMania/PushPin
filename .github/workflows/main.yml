@@ -24,7 +24,7 @@ jobs:
           POSTGRES_PASSWORD: postgres
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/pushpin_test"
+      DATABASE_URL: "postgres://postgres:postgres@localhost:5432/pushpin_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
