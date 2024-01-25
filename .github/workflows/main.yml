@@ -46,6 +46,11 @@ jobs:
           PUSHPIN_DATABASE_PASSWORD: postgres
           RAILS_ENV: test
         run: |
+          echo "PG_DATABASE: ${{ env.PG_DATABASE }}"
+          echo "PG_HOST: ${{ env.PG_HOST }}"
+          echo "DATABASE_USERNAME: ${{ env.DATABASE_USERNAME }}"
+          echo "PUSHPIN_DATABASE_PASSWORD: ${{ env.PUSHPIN_DATABASE_PASSWORD }}"
+          echo "RAILS_ENV: ${{ env.RAILS_ENV }}"
           bin/rails db:prepare
 
       - name: Run tests
