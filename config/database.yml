@@ -42,6 +42,8 @@ development:
 test:
   <<: *default
   database: pushpin_test
+  username: postgres
+  password: postgres
 
 production:
   <<: *default
