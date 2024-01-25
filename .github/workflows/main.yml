@@ -47,7 +47,7 @@ jobs:
           bin/rails db:prepare
 
       - name: Run tests
-         env:
+        env:
           PG_DATABASE: postgres
           PG_HOST: localhost
           PG_USER: postgres
