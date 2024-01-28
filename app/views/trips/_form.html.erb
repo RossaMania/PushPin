@@ -13,24 +13,24 @@
 
 
   <form>
-  <div class="space-y-12">
+  <div class="">
   <div class="border-b border-gray-900/10 pb-12">
-  <div>
+  <div class="m-2">
     <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :name, "Trip Name", style: "display: block" %></h2>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <h2 class="block text-base font-medium leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
-    <p class="block w-full py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
+  <div class="m-2">
+    <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
+    <p class="block w-full text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
   </div>
 
-  <div>
+  <div class="m-2">
     <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :start_date, "Trip Start", style: "display: block" %></h2>
     <%= form.datetime_field :start_date %>
   </div>
 
-  <div>
+  <div class="m-2">
     <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :end_date, "Trip End", style: "display: block" %>
     <%= form.datetime_field :end_date %>
   </div>
