@@ -3,7 +3,7 @@
 
 <h1 class="text-4xl font-bold p-2 m-auto">Trips</h1>
 
-<div id="trips" class="grid grid-cols-4">
+<div id="trips" class="grid grid-cols-3 gap-4">
   <% @trips.each do |trip| %>
     <div class="m-6 flex flex-col items-center justify-end">
       <%= render trip %>
