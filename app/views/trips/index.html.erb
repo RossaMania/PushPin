@@ -3,7 +3,7 @@
 
 <h1 class="text-3xl font-bold p-2 m-2">Trips</h1>
 
-<div id="trips" class="flex flex-col">
+<div id="trips" class="flex flex-auto flex-wrap w-64">
   <% @trips.each do |trip| %>
     <%= render trip %>
     <div class="m-6 flex flex-col items-center justify-end gap-x-6">
