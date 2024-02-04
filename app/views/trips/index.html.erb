@@ -5,9 +5,9 @@
 
 <div id="trips" class="grid grid-cols-3 gap-4">
   <% @trips.each do |trip| %>
-    <div class="m-6 flex flex-col items-center justify-end">
+    <div class="m-6 flex flex-col items-center border-2">
       <%= render trip %>
-      <p>
+      <p class="m-4">
         <%= link_to "Show Trip!", trip, class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
       </p>
     </div>
