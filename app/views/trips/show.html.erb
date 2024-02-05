@@ -11,19 +11,20 @@
 <div class="m-4 border-b border-gray-900/10 pb-8">
 
 <div>
-<h2 class="block text-md font-medium leading-loose text-gray-900">Places</h2>
+<h2>Places</h2>
 </div>
 
 <div>
-  <p>There are <%= @places.count %> places on this trip!</p>
-</div>
-
-<div class="p-2">
-  <%= link_to "Show Places!", trip_places_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %>
+  <h2  class="block text-md font-medium leading-loose text-gray-900"><%= @places.count %></h2>
+  <p>places on this trip!</p>
 </div>
 
 <div class="p-2">
   <%= button_to "Add Place!", new_trip_place_path(@trip), method: :get, class: "text-sm font-semibold leading-6 text-gray-900" %>
+</div>
+
+<div class="p-2">
+  <%= link_to "Show Places!", trip_places_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %>
 </div>
 
 </div>
