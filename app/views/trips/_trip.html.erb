@@ -6,7 +6,9 @@
 
   <div>
     <h2 class="block text-md font-medium leading-loose text-gray-900">Description:</h2>
-    <%= trip.description %>
+    <div class="<%= 'line-clamp-1' if controller_name == 'trips' && action_name == 'index' %>">
+  <%= trip.description %>
+</div>
   </div>
 
   <div>
