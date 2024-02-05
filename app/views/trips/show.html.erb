@@ -6,7 +6,10 @@
 <%= render @trip %>
 </div>
 
+<div>
+
 <div class="m-6">
+
 <div>
 <h2 class="block text-md font-medium leading-loose text-gray-900">Places</h2>
 </div>
@@ -20,6 +23,7 @@
 <div class="p-3">
   <%= link_to "Show Places!", trip_places_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %>
 </div>
+
 </div>
 
 <div class="m-6 flex items-center justify-end gap-x-6 p-4">
@@ -27,6 +31,8 @@
   <%= link_to "Go Back!", trips_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
 
   <%= button_to "Destroy Trip!", @trip, method: :delete, class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+</div>
+
 </div>
 
 </div>
