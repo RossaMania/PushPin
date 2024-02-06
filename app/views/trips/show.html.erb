@@ -28,7 +28,9 @@
 <br>
 
 <div class="m-4 flex items-center justify-end gap-x-6 p-4">
-  <%= link_to "Edit Trip!", edit_trip_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" %> |
+  <%= link_to edit_trip_path(@trip), class: "text-3xl font-normal leading-6 text-gray-900" do %>
+  <%= icon('fa-solid', 'pen-square') %>
+<% end %> |
   <%= link_to "Go Back!", trips_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
 
   <%= button_to "Destroy Trip!", @trip, method: :delete, class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
