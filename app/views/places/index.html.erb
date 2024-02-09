@@ -1,6 +1,6 @@
 <div class="flex flex-col">
 <h1 class="text-3xl font-bold mx-3">Places</h1>
-<h2 class="text-2xl font-semibold">visited on <%= link_to @trip.name, trip_path(@trip), class: "text-gray-800 hover:underline hover:text-violet-700 hover:bold" %> trip!</h2>
+<h2 class="text-2xl font-medium">visited on <%= link_to @trip.name, trip_path(@trip), class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %> trip!</h2>
 
 <div class="m-6 flex flex-col items-center justify-end gap-x-6">
 <% if @trip.places.any? %>
