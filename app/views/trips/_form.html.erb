@@ -11,35 +11,29 @@
     </div>
   <% end %>
 
-
-  <form>
-  <div class="">
   <div class="border-b border-gray-900/10 pb-12">
-  <div class="m-2">
-    <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :name, "Trip Name", style: "display: block" %></h2>
-    <%= form.text_field :name %>
-  </div>
+    <div class="m-2">
+      <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :name, "Trip Name", style: "display: block" %></h2>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="m-2">
-    <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
-    <p class="block w-full text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
-  </div>
+    <div class="m-2">
+      <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
+      <p class="block w-full text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
+    </div>
 
-  <div class="m-2">
-    <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :start_date, "Trip Start", style: "display: block" %></h2>
-    <%= form.datetime_field :start_date %>
-  </div>
+    <div class="m-2">
+      <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :start_date, "Trip Start", style: "display: block" %></h2>
+      <%= form.datetime_field :start_date %>
+    </div>
 
-  <div class="m-2">
-    <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :end_date, "Trip End", style: "display: block" %>
-    <%= form.datetime_field :end_date %>
-  </div>
+    <div class="m-2">
+      <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :end_date, "Trip End", style: "display: block" %>
+      <%= form.datetime_field :end_date %>
+    </div>
 
-  <div class="mt-6 flex items-center justify-end gap-x-6">
-  <%= form.submit "Save Trip!", class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
-</div>
-
+    <div class="mt-6 flex items-center justify-end gap-x-6">
+      <%= form.submit "Save Trip!", class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+    </div>
   </div>
-  </div>
-  </form>
 <% end %>
