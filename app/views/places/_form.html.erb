@@ -14,6 +14,12 @@
 <p class="block w-full rounded-md border-0 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
 <div>
 
+<div class="m-2">
+<h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :date_visited, "Date Visited" %></h2>
+<%= form.datetime_local :date_visited %>
+</div>
+
+
 <div class="mt-6 flex items-center justify-end gap-x-6">
   <%= form.submit "Save Place!", class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
 </div>
