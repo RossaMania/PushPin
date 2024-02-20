@@ -39,7 +39,8 @@ CREATE TABLE public.places (
     "references" character varying,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    trip_id bigint NOT NULL
+    trip_id bigint NOT NULL,
+    date_visited timestamp without time zone NOT NULL
 );
 
 
@@ -173,6 +174,7 @@ ALTER TABLE ONLY public.places
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240219021605'),
 ('20240115230026'),
 ('20240114034147'),
 ('20240104024159');

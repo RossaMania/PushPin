@@ -13,6 +13,9 @@
     <div class="px-24 py-6">
     <p><%= place.description %></p>
     </div>
+    <div>
+    <p>Visited on: <%= place.date_visited.strftime("%B %d, %Y") %></p>
+    </div>
   <% end %>
 <% else %>
   <p class="text-base font-semibold leading-7 text-gray-900">Oops! There are no places on this trip!</p>
