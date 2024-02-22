@@ -22,13 +22,13 @@
   <%= button_to "Add Place!", new_trip_place_path(@trip), method: :get, class: "text-sm font-semibold leading-6 text-gray-900" %>
 </div>
 
-<div class="p-2">
+<div class="p-2 hidden md:block">
   <%= link_to trip_places_path(@trip), class: "text-sm font-semibold leading-6 text-gray-900" do %>
-  Show Places!
+    Show Places!
   <% end %>
 </div>
 
-<div class="p-2" id="openModal">
+<div class="p-2 block md:hidden" id="openModal">
   <%= link_to trip_places_path(@trip), class: "text-xl font-semibold leading-6 text-gray-900" do %>
     <i class="fa-solid fa-arrow-up-right-from-square"></i>
   <% end %>
