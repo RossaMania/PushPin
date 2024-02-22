@@ -22,7 +22,7 @@
   <%= button_to "Add Place!", new_trip_place_path(@trip), method: :get, class: "text-sm font-semibold leading-6 text-gray-900" %>
 </div>
 
-<div class="p-2">
+<div class="p-2" id="openModal">
   <%= link_to trip_places_path(@trip), class: "text-xl font-semibold leading-6 text-gray-900" do %>
     <i class="fa-solid fa-arrow-up-right-from-square"></i>
   <% end %>
@@ -47,3 +47,28 @@
 </div>
 
 </div>
+
+<!-- Modal HTML -->
+<div id="myModal" class="max-md:fixed max-md:inset-0 max-md:bg-black max-md:bg-opacity-50 hidden">
+  <div class="max-md:absolute max-md:top-1/2 max-md:left-1/2 max-md:transform -translate-x-1/2 -translate-y-1/2 max-md:bg-white max-md:p-4 max-md:rounded">
+    <!-- Your modal content goes here -->
+    <p>This is your modal content.</p>
+    <button id="closeModal" class="mt-4 bg-gray-800 text-white px-4 py-2 rounded">Close!</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const modal = document.getElementById('myModal');
+
+    openModalButton.addEventListener('click', function () {
+      modal.classList.remove('hidden');
+    });
+
+    closeModalButton.addEventListener('click', function () {
+      modal.classList.add('hidden');
+    });
+  });
+</script>
