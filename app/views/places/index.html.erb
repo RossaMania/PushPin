@@ -1,13 +1,13 @@
 <div class="flex flex-col">
-<h1 class="text-3xl font-bold mx-3">Places</h1>
-<h2 class="text-2xl font-medium">visited on <%= link_to @trip.name, trip_path(@trip), class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %> trip!</h2>
+<h1 class="text-3xl font-bold mx-3 max-md:text-2xl">Places</h1>
+<h2 class="text-2xl font-medium max-md:text-xl">visited on <%= link_to @trip.name, trip_path(@trip), class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %> trip!</h2>
 
 <div class="m-6 flex flex-col items-center justify-end gap-x-6">
 <% if @trip.places.any? %>
   <!-- Display places here -->
   <% @trip.places.each do |place| %>
     <!-- Display individual place details as needed -->
-    <div class="text-2xl font-bold p-2 m-2">
+    <div class="text-2xl font-bold p-2 m-2 max-md:text-xl">
     <p><%= place.name %></p>
     </div>
     <div class="px-24 py-6">
