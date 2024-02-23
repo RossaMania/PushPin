@@ -64,7 +64,7 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+const initializeModal = () => {
     const openModalButton = document.getElementById("openModal");
     const closeModalButton = document.getElementById("closeModal");
     const modal = document.getElementById("placesModal");
@@ -96,5 +96,7 @@
     closeModalButton.addEventListener("click", () => {
       modal.classList.add("hidden");
     });
-  });
+  };
+
+  document.addEventListener("DOMContentLoaded", initializeModal);
 </script>
