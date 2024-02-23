@@ -7,15 +7,7 @@
   <!-- Display places here -->
   <% @trip.places.each do |place| %>
     <!-- Display individual place details as needed -->
-    <div class="text-2xl font-bold p-2 m-2 max-md:text-xl">
-    <p><%= place.name %></p>
-    </div>
-    <div class="px-24 py-6 max-md:px-3 max-md:py-3 max-md:text-sm">
-    <p><%= place.description %></p>
-    </div>
-    <div>
-    <p>Visited on: <%= place.date_visited.strftime("%B %d, %Y") %></p>
-    </div>
+ <%= render partial: "place", locals: { place: place } %>
   <% end %>
 <% else %>
   <p class="text-base font-semibold leading-7 text-gray-900">Oops! There are no places on this trip!</p>
