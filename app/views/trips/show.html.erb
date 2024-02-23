@@ -55,7 +55,7 @@
 </div>
 
 <!-- Modal HTML -->
-<div id="myModal" class="max-md:fixed max-md:inset-0 max-md:bg-black max-md:bg-opacity-50 hidden">
+<div id="placesModal" class="max-md:fixed max-md:inset-0 max-md:bg-black max-md:bg-opacity-50 hidden">
   <div class="max-md:absolute max-md:top-1/2 max-md:left-1/2 max-md:transform -translate-x-1/2 -translate-y-1/2 max-md:bg-white max-md:p-4 max-md:rounded">
     <!-- Your modal content goes here -->
     <p>This is your modal content.</p>
@@ -67,7 +67,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const openModalButton = document.getElementById("openModal");
     const closeModalButton = document.getElementById("closeModal");
-    const modal = document.getElementById("myModal");
+    const modal = document.getElementById("placesModal");
 
     openModalButton.addEventListener("click", () => {
       modal.classList.remove("hidden");
