@@ -78,7 +78,7 @@ const initializeModal = () => {
       const xhr = new XMLHttpRequest();
       xhr.open("GET", '<%= trip_places_path(@trip) %>', true);
 
-      xhr.onload = function() {
+      xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 400) {
           <!-- Update the modal content -->
           placesModalContent.innerHTML = xhr.responseText;
@@ -86,11 +86,14 @@ const initializeModal = () => {
           modal.classList.remove("hidden");
         } else {
           <!-- Handle errors if needed -->
+          const errorResponse = JSON.parse(xhr.responseText);
+          console.error("Error:", errorResponse.error);
         }
       };
 
-      xhr.onerror = function() {
+      xhr.onerror = () => {
         <!-- Handle errors if needed -->
+        console.error("Network error occurred");
       };
 
       xhr.send();
