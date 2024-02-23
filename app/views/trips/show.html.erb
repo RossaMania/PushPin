@@ -68,9 +68,29 @@
     const openModalButton = document.getElementById("openModal");
     const closeModalButton = document.getElementById("closeModal");
     const modal = document.getElementById("placesModal");
+    const placesModalContent = document.getElementById("placesModalContent");
 
     openModalButton.addEventListener("click", () => {
-      modal.classList.remove("hidden");
+      <!-- AJAX request to fetch places content -->
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", '<%= trip_places_path(@trip) %>', true);
+
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          <!-- Update the modal content -->
+          placesModalContent.innerHTML = xhr.responseText;
+          <!-- Show the modal -->
+          modal.classList.remove("hidden");
+        } else {
+          <!-- Handle errors if needed -->
+        }
+      };
+
+      xhr.onerror = function() {
+        <!-- Handle errors if needed -->
+      };
+
+      xhr.send();
     });
 
     closeModalButton.addEventListener("click", () => {
