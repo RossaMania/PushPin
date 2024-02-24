@@ -78,6 +78,8 @@ const initializeModal = () => {
       const xhr = new XMLHttpRequest();
       xhr.open("GET", '<%= trip_places_path(@trip) %>', true);
 
+      xhr.setRequestHeader('Accept', 'text/javascript');
+
       xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 400) {
           <!-- Update the modal content -->
