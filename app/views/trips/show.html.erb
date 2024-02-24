@@ -59,7 +59,7 @@
   <div class="max-md:absolute max-md:top-1/2 max-md:left-1/2 max-md:transform -translate-x-1/2 -translate-y-1/2 max-md:bg-white max-md:p-4 max-md:rounded" data-modal style="max-height: 80vh; overflow-y: auto;">
     <!-- Your modal content goes here -->
     <div id="placesModalContent">
-  <%= render partial: 'place', collection: @trip.places %>
+  <%= render partial: "places/place", collection: @trip.places %>
 </div>
     <button id="closeModal" class="mt-4 bg-indigo-600 text-white font-bold px-4 py-2 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Back!</button>
   </div>
