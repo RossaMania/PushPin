@@ -3,6 +3,17 @@ class PlacesController < ApplicationController
 
   def index
     @places = @trip.places
+
+    respond_to do |format|
+      format.html do
+        # Render the full HTML view for non-AJAX requests
+        render :index
+      end
+      format.js do
+        # Render a partial for AJAX requests
+        render partial: 'places/place', collection: @places
+      end
+    end
   end
 
   def new
