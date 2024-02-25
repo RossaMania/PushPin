@@ -1,0 +1,11 @@
+<div class="max-md:mx-4 mt-4">
+  <div class="text-2xl font-bold max-md:text-xl">
+    <p><%= place.name %></p>
+  </div>
+  <div class="max-md:mx-2 max-md:my-2 max-md:p-2 max-md:bg-gray-100 max-md:rounded">
+    <p><%= place.description %></p>
+  </div>
+  <div class="text-gray-500 max-md:text-sm">
+    <p>Visited on: <%= place.date_visited.strftime("%B %d, %Y") %></p>
+  </div>
+</div>

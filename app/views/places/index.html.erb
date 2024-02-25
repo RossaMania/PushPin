@@ -1,21 +1,13 @@
 <div class="flex flex-col">
-<h1 class="text-3xl font-bold mx-3">Places</h1>
-<h2 class="text-2xl font-medium">visited on <%= link_to @trip.name, trip_path(@trip), class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %> trip!</h2>
+<h1 class="text-3xl font-bold mx-3 max-md:text-2xl">Places</h1>
+<h2 class="text-2xl font-medium max-md:text-xl">visited on <%= link_to @trip.name, trip_path(@trip), class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %> trip!</h2>
 
 <div class="m-6 flex flex-col items-center justify-end gap-x-6">
 <% if @trip.places.any? %>
   <!-- Display places here -->
   <% @trip.places.each do |place| %>
     <!-- Display individual place details as needed -->
-    <div class="text-2xl font-bold p-2 m-2">
-    <p><%= place.name %></p>
-    </div>
-    <div class="px-24 py-6">
-    <p><%= place.description %></p>
-    </div>
-    <div>
-    <p>Visited on: <%= place.date_visited.strftime("%B %d, %Y") %></p>
-    </div>
+ <%= render partial: "place", locals: { place: place } %>
   <% end %>
 <% else %>
   <p class="text-base font-semibold leading-7 text-gray-900">Oops! There are no places on this trip!</p>
@@ -23,6 +15,8 @@
 </div>
 
 <div class="m-6 flex flex-col items-center justify-end gap-x-6">
-<%= link_to 'Add Place!', new_trip_place_path(@trip), class: "rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
-</div>
+  <%= link_to new_trip_place_path(@trip), class: "rounded-md bg-indigo-600 p-2 text-lg font-bold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" do %>
+    <i class="fa-solid fa-location-crosshairs text-xl"></i>
+    <i class="fa-solid fa-plus"></i>
+  <% end %>
 </div>
