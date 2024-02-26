@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
       end
       format.js do
         # Render a partial for AJAX requests
-        render partial: 'places/place', collection: @places
+        render partial: "places/place", collection: @places
       end
     end
   end
