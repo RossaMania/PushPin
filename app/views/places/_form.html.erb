@@ -15,14 +15,18 @@
 <div>
 
 <div>
-<h2 class="text-base font-semibold leading-7 text-gray-900">Place Link</h2>
+  <h2 class="text-base font-semibold leading-7 text-gray-900">Place Link</h2>
   <%= form.fields_for :links do |link_form| %>
-    <%= link_form.label :name %>
-    <%= link_form.text_field :name %>
+    <div class="mb-4">
+      <%= link_form.label :name, "Link Name", class: "block text-sm font-medium text-gray-700" %>
+      <%= link_form.text_field :name, class: "mt-1 p-2 border rounded-md w-full" %>
+    </div>
 
-    <%= link_form.label :url %>
-    <%= link_form.text_field :url %>
-    <% end %>
+    <div class="mb-4">
+      <%= link_form.label :url, "Link URL", class: "block text-sm font-medium text-gray-700" %>
+      <%= link_form.text_field :url, class: "mt-1 p-2 border rounded-md w-full" %>
+    </div>
+  <% end %>
 </div>
 
 <div class="m-2">
