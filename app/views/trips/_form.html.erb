@@ -25,6 +25,7 @@
     <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :end_date, "Trip End", style: "display: block" %>
     <%= form.date_field :end_date %>
   </div>
+
   <div>
   <h2>Links</h2>
   <%= form.fields_for :links do |link_form| %>
@@ -33,7 +34,9 @@
 
     <%= link_form.label :url %>
     <%= link_form.text_field :url %>
+    <% end %>
   </div>
+
     <div class="m-2">
       <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
       <p class="block w-full text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
