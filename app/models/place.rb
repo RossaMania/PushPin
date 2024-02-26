@@ -3,5 +3,5 @@ class Place < ApplicationRecord
 
   validates :date_visited, presence: true
 
-  has_many :links, as: :linkable
+  has_many :links, as: :linkable, dependent: :destroy
 end
