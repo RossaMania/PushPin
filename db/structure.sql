@@ -35,7 +35,8 @@ CREATE TABLE public.links (
     linkable_type character varying NOT NULL,
     linkable_id bigint NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    name character varying
 );
 
 
@@ -229,6 +230,7 @@ ALTER TABLE ONLY public.places
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240226035714'),
 ('20240226030420'),
 ('20240219021605'),
 ('20240115230026'),
