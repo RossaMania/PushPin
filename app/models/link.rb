@@ -3,4 +3,6 @@ class Link < ApplicationRecord
 
   validates :url, allow_blank: true
   validates :name, allow_blank: true
+
+  validates :dummy_presence_validation, presence: true
 end
