@@ -16,9 +16,10 @@ class PlacesController < ApplicationController
     end
   end
 
-  def new
-    @place = @trip.places.build
-  end
+def new
+  @place = @trip.places.build
+  @place.links.build
+end
 
   def create
     @place = @trip.places.build(place_params)
