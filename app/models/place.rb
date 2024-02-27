@@ -5,5 +5,4 @@ class Place < ApplicationRecord
 
   has_many :links, as: :linkable, dependent: :destroy
 
-  validates :dummy_presence_validation, presence: true
 end
