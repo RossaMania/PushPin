@@ -1,3 +1,6 @@
+<%# Add missing import statement %>
+<%# Add missing import statement %>
+
 <div class="nested-fields">
   <div class="mb-4">
     <%= link_form.label :name, raw("<i class='fa-solid fa-link'></i> Name"), class: "block text-sm font-medium text-gray-700" %>
@@ -9,9 +12,5 @@
     <%= link_form.text_field :url, class: "mt-1 p-2", placeholder: "www.example.com..." %>
   </div>
 
-  <%= link_to_remove_association "Remove Link", link_form %>
-
-  <div class="mt-4">
-  <%= link_to_add_association "Add a Link!", form, :links %>
-</div>
+  <%= link_to_remove_association "Remove Link", link_form, class: "remove-link" %>
 </div>
