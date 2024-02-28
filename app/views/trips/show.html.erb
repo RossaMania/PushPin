@@ -11,8 +11,8 @@
   <h2 class="text-lg font-semibold">Links:</h2>
   <% @links.each do |link| %>
     <div class="flex items-center mt-2">
-      <%= raw("<i class='fa-solid fa-link text-blue-500 mr-2'></i>") %>
-      <%= link_to link.name, link.url, target: "_blank", class: "text-blue-500 hover:underline" %>
+      <%= raw("<i class='fa-solid fa-link block text-sm font-medium text-gray-700 m-2'></i>") %>
+      <%= link_to link.name, link.url, target: "_blank", class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %>
     </div>
   <% end %>
 </div>
@@ -26,7 +26,7 @@
 
 <div>
   <p class="text-xl font-normal">Places on this trip:</p>
-  <h2  class="block text-3xl text-center font-black leading-loose text-gray-900"><%= @places.count %><i class="fa-solid fa-location-crosshairs p-2"></i></h2>
+  <h2  class="block text-3xl text-center font-black leading-loose text-gray-900"><%= @places.count %><i class="fa-solid fa-location-crosshairs p-2 text-gray-600"></i></h2>
 </div>
 
 <div class="p-2">

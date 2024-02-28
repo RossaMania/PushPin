@@ -14,8 +14,8 @@
     <h2 class="text-lg font-semibold">Links:</h2>
 <% place.links.each do |link| %>
   <div class="flex items-center mt-2">
-    <%= raw("<i class='fa-solid fa-link text-blue-500 mr-2'></i>") %>
-    <%= link_to link.name, link.url, target: "_blank", class: "text-blue-500 hover:underline" %>
+    <%= raw("<i class='fa-solid fa-link block text-sm font-medium text-gray-700 m-2'></i>") %>
+    <%= link_to link.name, link.url, target: "_blank", class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %>
   </div>
 <% end %>
 </div>
