@@ -15,7 +15,6 @@
 <% place.links.each do |link| %>
   <div class="flex items-center mt-2">
     <%= raw("<i class='fa-solid fa-link text-blue-500 mr-2'></i>") %>
-    <%= link.name.inspect %> <%= link.url.inspect %> <!-- Add this line for debugging -->
     <%= link_to link.name, link.url, class: "text-blue-500 hover:underline" %>
   </div>
 <% end %>
