@@ -10,6 +10,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @places = @trip.places
+    @links = @trip.links # Fetch links associated with the trip
   end
 
   # GET /trips/new
