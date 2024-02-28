@@ -6,6 +6,17 @@
 <%= render @trip %>
 </div>
 
+<!-- Display Links -->
+<div class="mt-4">
+  <h2 class="text-lg font-semibold">Links:</h2>
+  <% @links.each do |link| %>
+    <div class="flex items-center mt-2">
+      <%= raw("<i class='fa-solid fa-link text-blue-500 mr-2'></i>") %>
+      <%= link_to link.name, link.url, target: "_blank", class: "text-blue-500 hover:underline" %>
+    </div>
+  <% end %>
+</div>
+
 <div class="max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
 
 <div class="border-2 border-slate-200 m-2">
