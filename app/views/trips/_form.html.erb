@@ -25,24 +25,30 @@
       <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :end_date, "Trip End", style: "display: block" %></h2>
       <%= form.date_field :end_date %>
     </div>
+    <div class="m-2">
+      <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
+      <%= form.text_area :description %>
+    </div>
   </div>
 </div>
 
-  </div>
-
-    <div class="m-2">
-      <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :description, "Trip Description", style: "display: block" %></h2>
+<% end %>
       <p class="block w-full text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
     </div>
 
     <div>
       <h2 class="text-base font-semibold leading-7 text-gray-900">Add a Link!</h2>
-      <%= form.fields_for :links do |link_form| %>
-        <%= render partial: 'link_fields', locals: { link_form: link_form } %>
-      <% end %>
-      <div class="mt-4">
-        <%= link_to_add_association "Add a Link!", form, :links %>
-      </div>
+      <div>
+  <div class="mb-4">
+    <%= link_form.label :name, raw("<i class='fa-solid fa-link'></i> Name"), class: "block text-sm font-medium text-gray-700" %>
+    <%= link_form.text_field :name, class: "mt-1 p-2", placeholder: "photo album, blog post..." %>
+  </div>
+
+  <div class="mb-4">
+    <%= link_form.label :url, raw("<i class='fa-solid fa-link'></i> URL"), class: "block text-sm font-medium text-gray-700" %>
+    <%= link_form.text_field :url, class: "mt-1 p-2", placeholder: "www.example.com..." %>
+  </div>
+</div>
     </div>
 
     <div class="mt-6 flex items-center justify-end gap-x-6">
