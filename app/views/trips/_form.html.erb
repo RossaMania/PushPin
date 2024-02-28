@@ -32,7 +32,7 @@
 
   <div>
   <h2 class="text-base font-semibold leading-7 text-gray-900">Add a Link!</h2>
-  <%= form.fields_for :links do |link_form| %>
+  <%= form.fields_for :links, (link_form = @trip.links.build) do |link_form| %>
     <div class="nested-fields">
       <div class="mb-4">
         <%= link_form.label :name, raw("<i class='fa-solid fa-link'></i> Name"), class: "block text-sm font-medium text-gray-700" %>
