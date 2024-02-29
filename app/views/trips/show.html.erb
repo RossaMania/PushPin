@@ -7,12 +7,12 @@
 </div>
 
 <!-- Display Links -->
-<div class="mt-4">
+<div class="m-5">
   <h2 class="text-lg font-semibold">Links:</h2>
   <% @links.each do |link| %>
     <div class="flex items-center mt-2">
-      <%= raw("<i class='fa-solid fa-link block text-sm font-medium text-gray-700 m-2'></i>") %>
-      <%= link_to link.name, link.url, target: "_blank", class: "text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %>
+      <%= raw("<i class='fa-solid fa-link block text-sm font-bold text-gray-700 m-2'></i>") %>
+      <%= link_to link.name, link.url, target: "_blank", class: "font-semibold text-gray-700 text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %>
     </div>
   <% end %>
 </div>
