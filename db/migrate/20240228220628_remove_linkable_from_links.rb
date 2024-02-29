@@ -1,4 +1,4 @@
-class RemoveLinkableFromLinks < ActiveRecord::Migration[6.1]
+class RemoveLinkableFromLinks < ActiveRecord::Migration[7.1]
   def change
     change_table :links, bulk: true do |t|
       t.remove :linkable_type
