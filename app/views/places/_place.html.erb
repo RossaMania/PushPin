@@ -5,7 +5,17 @@
   <div class="max-md:mx-2 max-md:my-2 max-md:p-2 max-md:bg-gray-100 max-md:rounded">
     <p><%= place.description %></p>
   </div>
-  <div class="text-gray-500 max-md:text-sm">
+  <div class="my-4 text-gray-500 font-semibold max-md:text-sm max-xl:text-lg">
     <p>Visited on: <%= place.date_visited.strftime("%B %d, %Y") %></p>
   </div>
+
+  <!-- Display Links -->
+  <div class="m-5">
+<% place.links.each do |link| %>
+  <div class="flex items-center mt-2">
+    <%= raw("<i class='fa-solid fa-link block text-sm font-bold text-gray-700 m-2'></i>") %>
+      <%= link_to link.name, link.url, target: "_blank", class: "font-semibold text-gray-700 text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %>
+  </div>
+<% end %>
+</div>
 </div>

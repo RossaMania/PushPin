@@ -6,6 +6,16 @@
 <%= render @trip %>
 </div>
 
+<!-- Display Links -->
+<div class="m-5">
+  <% @links.each do |link| %>
+    <div class="flex items-center mt-2">
+      <%= raw("<i class='fa-solid fa-link block text-sm font-bold text-gray-700 m-2'></i>") %>
+      <%= link_to link.name, link.url, target: "_blank", class: "font-semibold text-gray-700 text-gray-800 hover:underline hover:text-violet-700 hover:font-bold" %>
+    </div>
+  <% end %>
+</div>
+
 <div class="max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
 
 <div class="border-2 border-slate-200 m-2">
@@ -15,7 +25,7 @@
 
 <div>
   <p class="text-xl font-normal">Places on this trip:</p>
-  <h2  class="block text-3xl text-center font-black leading-loose text-gray-900"><%= @places.count %><i class="fa-solid fa-location-crosshairs p-2"></i></h2>
+  <h2  class="block text-3xl text-center font-black leading-loose text-gray-900"><%= @places.count %><i class="fa-solid fa-location-crosshairs p-2 text-gray-600"></i></h2>
 </div>
 
 <div class="p-2">
@@ -56,7 +66,7 @@
 
 <!-- Modal HTML -->
 <div id="placesModal" class="max-md:fixed max-md:inset-0 max-md:bg-black max-md:bg-opacity-50 hidden">
-  <div class="max-md:absolute max-md:top-1/2 max-md:left-1/2 max-md:transform -translate-x-1/2 -translate-y-1/2 max-md:bg-white max-md:p-4 max-md:rounded" data-modal style="max-height: 80vh; overflow-y: auto;">
+  <div class="max-md:absolute max-md:top-1/2 max-md:left-1/2 max-md:transform -translate-x-1/2 -translate-y-1/2 max-md:w-full max-md:bg-white max-md:p-4 max-md:rounded" data-modal style="max-height: 80vh; overflow-y: auto;">
     <!-- Your modal content goes here -->
     <div id="placesModalContent">
   <%= render partial: "places/place", collection: @trip.places %>

@@ -4,4 +4,7 @@ class Place < ApplicationRecord
   validates :date_visited, presence: true
 
   has_many :links, as: :linkable, dependent: :destroy
+
+  accepts_nested_attributes_for :links
+
 end

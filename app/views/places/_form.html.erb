@@ -14,6 +14,21 @@
 <p class="block w-full rounded-md border-0 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= form.text_area :description %></p>
 <div>
 
+<div>
+  <h2 class="text-base font-semibold leading-7 text-gray-900">Add a Link!</h2>
+  <%= form.fields_for :links, (link_form = @place.links.build) do |link_form| %>
+    <div class="mb-4">
+      <%= link_form.label :name, raw("<i class='fa-solid fa-link'></i> Name"), class: "block text-sm font-medium text-gray-700" %>
+      <%= link_form.text_field :name, class: "mt-1 p-2", placeholder: "photo album, blog post..."%>
+    </div>
+
+    <div class="mb-4">
+      <%= link_form.label :url, raw("<i class='fa-solid fa-link'></i> URL"), class: "block text-sm font-medium text-gray-700" %>
+      <%= link_form.text_field :url, class: "mt-1 p-2", placeholder: "www.example.com..." %>
+    </div>
+  <% end %>
+</div>
+
 <div class="m-2">
 <h2 class="text-base font-semibold leading-7 text-gray-900"><%= form.label :date_visited, "Date Visited" %></h2>
 <%= form.date_field :date_visited %>

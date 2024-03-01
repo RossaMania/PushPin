@@ -10,6 +10,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @places = @trip.places
+    @links = @trip.links # Fetch links associated with the trip
   end
 
   # GET /trips/new
@@ -67,7 +68,7 @@ class TripsController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def trip_params
-    params.require(:trip).permit(:name, :description, :start_date, :end_date)
+    def trip_params
+    params.require(:trip).permit(:name, :description, :start_date, :end_date, links_attributes: [ :name, :url, :_destroy])
   end
 end
