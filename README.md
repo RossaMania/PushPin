@@ -1,3 +1,5 @@
+Thank you for checking out my project! I'm an aspiring web developer looking for a job! If you'd like to discuss opportunities or learn more about my work, please connect with me! https://www.linkedin.com/in/ross-clettenberg/
+
 # README
 
 This README would normally document whatever steps are necessary to get the
